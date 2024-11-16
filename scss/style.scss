@@ -418,6 +418,10 @@ body {
       width: 28px;
       height: 28px;
       margin-right: 3px;
+      @media (max-width: 768px) {
+         width: 20px;
+         height: 20px;
+      }
       img{
          width: 100%;
          object-fit: cover;
@@ -434,7 +438,7 @@ body {
       color: #fff;
       font-size: 26px;
       @media (max-width: 768px) {
-         font-size: 28px;
+         font-size: 22px;
       }
    }
 

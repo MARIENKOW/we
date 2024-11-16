@@ -478,6 +478,12 @@ body {
   height: 28px;
   margin-right: 3px;
 }
+@media (max-width: 768px) {
+  .footer__img {
+    width: 20px;
+    height: 20px;
+  }
+}
 .footer__img img {
   width: 100%;
   -o-object-fit: cover;
@@ -493,7 +499,7 @@ body {
 }
 @media (max-width: 768px) {
   .footer__name {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 .footer__subtitle {
