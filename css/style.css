@@ -243,6 +243,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.header__img {
+  margin-right: 3px;
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 768px) {
+  .header__img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.header__img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .header__img svg {
   width: 32px;
   height: 32px;
@@ -457,9 +473,17 @@ body {
           align-items: center;
   margin-bottom: 30px;
 }
-.footer__img svg {
+.footer__img {
   width: 28px;
   height: 28px;
+  margin-right: 3px;
+}
+.footer__img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer__img svg {
   fill: #fff !important;
 }
 .footer__name {
