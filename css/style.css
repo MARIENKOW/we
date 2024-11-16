@@ -258,6 +258,14 @@ body {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 28px;
+  height: 28px;
+}
+@media (max-width: 768px) {
+  .header__img img {
+    width: 20px;
+    height: 20px;
+  }
 }
 .header__img svg {
   width: 32px;
@@ -486,8 +494,16 @@ body {
 }
 .footer__img img {
   width: 100%;
+  width: 28px;
+  height: 28px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 768px) {
+  .footer__img img {
+    width: 20px;
+    height: 20px;
+  }
 }
 .footer__img svg {
   fill: #fff !important;
