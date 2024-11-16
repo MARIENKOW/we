@@ -211,6 +211,7 @@ body {
 .header {
    position: fixed;
    top: 0;
+   z-index: 100;
    left: 0;
    width: 100%;
    padding: 30px 0;
@@ -453,7 +454,6 @@ body {
    margin-bottom: 160px;
    @media (max-width: 956px) {
       margin-bottom: 80px;
-
    }
 
    &__inner {
@@ -492,7 +492,6 @@ body {
          @media (max-width: 956px) {
             position: static;
             padding: 25px;
-
          }
       }
    }
@@ -592,13 +591,16 @@ body {
          }
       }
       &--text {
-
       }
       &--body {
          &--inner {
             font-size: $smallSize;
             line-height: 140%;
             padding-bottom: 15px;
+            @media (max-width: 956px) {
+               color: #000;
+               opacity: 0.8;
+            }
          }
          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
