@@ -147,6 +147,7 @@ input[type=number]:focus {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: #000;
+  background: transparent;
 }
 .btn:hover {
   background: #3056d3;
