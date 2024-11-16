@@ -158,7 +158,7 @@ $size40: 40px;
    padding: 5px 10px;
    border-radius: 100px;
    transition: 0.3s;
-
+   color: #000;
    &:hover {
       background: #3056d3;
       color: #fff;
@@ -172,6 +172,7 @@ $size40: 40px;
       display: inline;
       display: flex;
       padding: 4px 0 0 0;
+      transition: 0.3s;
    }
    &--main {
       font-size: 20px;
@@ -406,7 +407,6 @@ body {
          height: 28px;
          fill: #fff !important;
          @media (max-width: 768px) {
-
          }
       }
    }

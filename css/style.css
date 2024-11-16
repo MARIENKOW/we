@@ -146,6 +146,7 @@ input[type=number]:focus {
   border-radius: 100px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  color: #000;
 }
 .btn:hover {
   background: #3056d3;
@@ -162,6 +163,8 @@ input[type=number]:focus {
   display: -ms-flexbox;
   display: flex;
   padding: 4px 0 0 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .btn--main {
   font-size: 20px;
