@@ -162,7 +162,7 @@ $size40: 40px;
       background: #3056d3;
       color: #fff;
       svg {
-         fill: #fff;
+         fill: #fff !important;
       }
    }
    svg {
@@ -185,6 +185,12 @@ $size40: 40px;
       }
       svg {
          fill: #fff !important;
+      }
+   }
+   &--contact {
+      color: $primary;
+      svg {
+         fill: $primary !important;
       }
    }
 }
@@ -549,7 +555,6 @@ body {
       margin-bottom: 16px;
       @media (max-width: 956px) {
          min-height: auto;
-
       }
    }
 
@@ -558,7 +563,7 @@ body {
       font-weight: 900;
       font-size: $size40;
       white-space: nowrap;
-      @include adaptiv-value('font-size',40 ,32 ,1 )
+      @include adaptiv-value("font-size", 40, 32, 1);
    }
 
    &__subtitle {
@@ -566,11 +571,10 @@ body {
       line-height: 150%;
       color: #fff;
       max-width: 330px;
-      @include adaptiv-value('font-size',24 ,18 ,1 );
+      @include adaptiv-value("font-size", 24, 18, 1);
 
       @media (max-width: 956px) {
          max-width: none;
-
       }
    }
 
@@ -589,6 +593,166 @@ body {
    &__title--small {
       font-size: $SubtitleSize;
       font-weight: 700;
+   }
+}
+
+.text {
+   margin-bottom: 160px;
+   @media (max-width: 768px) {
+      margin-bottom: 80px;
+   }
+   &__inner {
+   }
+
+   &__subtitle {
+      text-align: center;
+      line-height: 150%;
+      max-width: 980px;
+      margin: 0 auto;
+      @media (max-width:768px) {
+         font-size: 18px;
+      }
+   }
+}
+
+.why {
+   margin-bottom: 160px;
+   @media (max-width: 956px) {
+      margin-bottom: 80px;
+   }
+
+   &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   &__title {
+      font-size: $TitleSize;
+      font-weight: 700;
+      margin-bottom: 20px;
+      @media (max-width: 956px) {
+         margin-bottom: 0px;
+         font-size: 30px;
+         text-align: center;
+      }
+   }
+
+   &__top {
+      display: flex;
+      gap: 30px;
+      padding: 40px;
+      background: #fff;
+      border-radius: 20px;
+      align-items: center;
+      @media (max-width: 956px) {
+         flex-direction: column;
+         padding: 25px 20px;
+      }
+   }
+
+   &__logo {
+      width: 277px;
+      height: 277px;
+      @media (max-width: 956px) {
+         width: 200px;
+         height: 200px;
+      }
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      @include adaptiv-value("font-size", 24, 18, 1);
+
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 16px;
+         margin-left: 20px;
+         li {
+            font-weight: 400;
+            line-height: 150%;
+         }
+      }
+   }
+
+   &__subtitle {
+      font-size: $SubtitleSize;
+      font-weight: 900;
+      line-height: 120%;
+      @include adaptiv-value("font-size", 32, 28, 1);
+      @media (max-width: 956px) {
+         text-align: center;
+      }
+   }
+
+   &__bottom {
+      display: flex;
+      gap: 30px;
+      @media (max-width: 956px) {
+         flex-direction: column;
+      }
+   }
+
+   &__block {
+      background-color: #323d46;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 40px;
+      border-radius: 20px;
+      @media (max-width: 956px) {
+         align-items: center;
+         padding: 25px 20px;
+      }
+      .why__info {
+         color: #fff;
+      }
+   }
+
+   &__logo--bot {
+      width: 160px;
+      height: 160px;
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__block--right {
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 40%;
+      align-items: start;
+      @media (max-width: 956px) {
+         align-items: center;
+         max-width: none;
+         padding: 25px 20px;
+      }
+      .why__info {
+         color: #000000;
+      }
+   }
+
+   &__text {
+      flex: 1;
+   }
+
+   &__button {
+      margin-top: 32px;
    }
 }
 
