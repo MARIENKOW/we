@@ -1,3 +1,5 @@
+import { smoothScroll } from "./module.js/smoothScroll.js";
+
 const spoilerUpFlex = (target) => {
    target.parentElement.classList.remove('_spoilerOpen');
    target.style.height = '0px';
@@ -57,3 +59,33 @@ function spoilerFlex() {
 
 
 spoilerFlex();
+
+const clickSmooths = [...document.querySelectorAll('[data-smooth]')];
+clickSmooths.forEach(el => {
+   el.addEventListener('click', (e) => {
+      e.preventDefault()
+      if (document.body.classList.contains("_burgerOpen")) {
+         document.body.classList.remove('_burgerOpen')
+         document.body.style.overflow = ''
+      }
+      smoothScroll(el.dataset.smooth);
+   })
+})
+
+const burger = document.querySelector('._burger');
+if (burger) {
+   burger.addEventListener('click', (e) => {
+      if (document.body.classList.contains("_burgerOpen")) {
+         document.body.classList.remove('_burgerOpen')
+         document.body.style.overflow = ''
+      } else {
+         document.body.classList.add('_burgerOpen')
+         document.body.style.overflow = 'hidden'
+      }
+   })
+}
+
+
+AOS.init({once:true})
+
+

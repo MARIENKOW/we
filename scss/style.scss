@@ -103,7 +103,8 @@ input[type="number"]:focus {
 
 $text: #191b1b;
 // $color2: #08c391;
-$primary: #007bfb;
+// $primary: #007bfb;
+$primary: #6400fb;
 $backgroundPrimary: #efefef;
 $backgroundSecondary: #fff;
 
@@ -177,7 +178,7 @@ $size40: 40px;
    color: #000;
    background: transparent;
    &:hover {
-      background: #3056d3;
+      background: $primary;
       color: #fff;
       svg {
          fill: #fff !important;
@@ -230,6 +231,20 @@ body {
    font-size: $mainSize;
    background: $backgroundPrimary;
    font-weight: 500;
+   position: relative;
+   &::after {
+      position: absolute;
+      top: 0;
+      content: "";
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.3s;
+   }
 }
 
 .header {
@@ -290,25 +305,117 @@ body {
       }
    }
 
-   &__button {
-      position: relative;
-      border-radius: 10px;
-      padding: 5px 17px 5px 5px;
-      font-size: 15px;
-      text-transform: uppercase;
-      font-weight: 500;
-      background: #fff;
-      &:before {
+   // &__button {
+   //    position: relative;
+   //    border-radius: 10px;
+   //    padding: 5px 17px 5px 5px;
+   //    font-size: 15px;
+   //    text-transform: uppercase;
+   //    font-weight: 500;
+   //    background: #fff;
+   //    &:before {
+   //       position: absolute;
+   //       content: "";
+   //       top: 9px;
+   //       right: 4px;
+   //       display: block;
+   //       width: 8px;
+   //       height: 8px;
+   //       border-right: 1px solid;
+   //       border-bottom: 1px solid;
+   //       transform: rotate(45deg);
+   //    }
+   // }
+
+   &__navigation {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      @media (max-width: 868px) {
          position: absolute;
+         top: calc(100% + 20px);
+         right: -200%;
+         transition: 0.4s ease-in-out;
+         flex-direction: column;
+         text-align: right;
+         background-color: #ffffff;
+         padding: 35px 30px;
+         border-radius: 25px;
+      }
+   }
+
+   &__link {
+      // color: $color3 !important;
+      font-size: 16px;
+      position: relative;
+      @media (max-width: 868px) {
+         font-size: 24px;
+         font-weight: 600;
+         color: #000 !important;
+      }
+      &::after {
          content: "";
-         top: 9px;
-         right: 4px;
-         display: block;
-         width: 8px;
-         height: 8px;
-         border-right: 1px solid;
-         border-bottom: 1px solid;
-         transform: rotate(45deg);
+         position: absolute;
+         top: calc(100% + 4px);
+         left: 0;
+         background-color: #fff;
+         height: 2px;
+         width: 0%;
+      }
+      &:hover {
+         color: $primary !important;
+         transition: 0.1s color 0.11s;
+         &::after {
+            width: 100%;
+            transition: 0.3s width 0s;
+         }
+      }
+   }
+
+   &__burger {
+      display: none;
+      background-color: transparent;
+      padding: 7px;
+      height: 100%;
+      min-height: 40px;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 500px) {
+         // padding: 0;
+         margin: 0px 10px 0px 0px;
+      }
+      span {
+         display: inline-block;
+         width: 25px;
+         height: 3px;
+         background-color: #000000;
+         position: relative;
+         transition: 0.3s;
+         @media (max-width: 500px) {
+            width: 27px;
+         }
+         &::after,
+         &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #000000;
+            transition: 0.3s;
+            @media (max-width: 500px) {
+               width: 35px;
+            }
+         }
+         &::before {
+            top: 10px;
+         }
+         &:after {
+            bottom: 10px;
+         }
+      }
+      @media (max-width: 868px) {
+         display: flex;
       }
    }
 }
@@ -1150,5 +1257,34 @@ body {
    &__copyright {
       color: #a1a1a1;
       font-size: 16px;
+   }
+}
+
+
+
+
+
+
+
+._burgerOpen {
+   ._burger {
+      span {
+         background-color: transparent;
+         &::after {
+            transform: rotate(45deg);
+            bottom: 0;
+         }
+         &::before {
+            transform: rotate(-45deg);
+            top: 0;
+         }
+      }
+   }
+   .header__navigation {
+      right: 0;
+   }
+   &::after {
+      opacity: 1;
+      pointer-events: all;
    }
 }
