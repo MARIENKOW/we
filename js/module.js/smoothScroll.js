@@ -1,7 +1,7 @@
 
 function smoothScrollWrapper(){
 
-   const step = 30;
+   const step = 100;
    let previusPosition = null
 
    function toScroll(element = 'top',position){
